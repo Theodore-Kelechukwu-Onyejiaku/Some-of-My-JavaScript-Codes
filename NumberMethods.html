@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="view-port" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<meta name="view-port" content="width=device-width, initial-scale=1.0">
+<title>Number Methods</title>
+<style type="text/css">
+	.jumbotron{
+		background-color: #2e2d88
+	}
+    input{display:block;
+    }
+    label{
+    	display:block;
+    }
+</style>
+</head>
+<body style="font-size:11px;font-family:cursive">
+<div class="container">
+   <div class="row">
+     <div class="col-xs-7 col-sm-9 col-md-9 col-lg-10 bg-default">
+     <div class="page-header text-info text-center bg-primary text-uppercase">
+     	<h3>This is about number methods</h3>
+     </div>
+     <p class="bg-primary text-info">toExponential(), toFixed() and toPrecision()</p>
+     <div class="alert alert-warning">
+        <p><span class="glyphicon glyphicon-warning-sign"></span> Click the refresh button below to see the results</p>
+      </div>
+        <p id="id1">This paragraph will display the result</p>
+        <button class="btn btn-danger btn-xs"  onclick="myFunction()"><span class="glyphicon glyphicon-refresh"> Refresh</span></button>
+        <div class="page-header text-info"><h4>There are 3 javascript methods used to convert variables to numbers</h4></div>
+        <p class=" bg-danger text-info">Number() Method</p>
+        <p class="text-info">The Number() method takes a string number and changes it to a number</p>
+        <div class="alert alert-warning">
+        <p><span class="glyphicon glyphicon-warning-sign"></span> Click the refresh button below to see the results</p>
+        </div>
+        <p id="id2">This paragraph will display the results</p>
+       <button class="btn btn-danger btn-xs" onclick="myFunction2()"><span class="glyphicon glyphicon-refresh"> Refresh</span></button><hr>
+        <p class=" bg-danger text-info">parseInt() Method</p>
+        <p class="text-info">The parseInt() method accepts the first integer of a string, only if the string starts with a number and then changes the number string as a number.</p>
+        <div class="alert alert-warning">
+        <p><span class="glyphicon glyphicon-warning-sign"></span> Click the refresh button below to see the results</p>
+        </div>
+        <p id="id3">This is the paragraph that will display the results</p>
+        <button class="btn btn-danger btn-xs" onclick="myFunction3()"><span class="glyphicon glyphicon-refresh"> Refresh</span></button><hr>
+        <p class=" bg-danger text-info">parseFloat() Method</p>
+        <p class="text-info">The parseFloat() will accept the first number in a string only if the string has the first data as numbers, and convet it to a number. Furthermore, if the first number is a float, unlike the Number() Method and the parseInt() it will accept the float-string and convert it to a number. </p>
+        <div class="alert alert-warning">
+        <p><span class="glyphicon glyphicon-warning-sign"></span> Click the refresh button below to see the results</p>
+        </div>
+        <p id="id4">This is the paragraph that will display the results</p>
+        <button class="btn btn-danger btn-xs" onclick="myFunction4()"><span class="glyphicon glyphicon-refresh"> Refresh</span></button>
+     </div>
+
+     <div class="col-xs-5 col-sm-3 col-md-3 col-lg-2 jumbotron " style="overflow:auto;color:white;padding:0">
+     	<form>
+     	    <label for="idt1">Email</label>
+     		<input type="email" name="textbox1" value="Please Enter your email here" id="idt1" class="bg-primary">
+     		<label for="idp1">Password</label>
+     		<input type="password" name="password1" value="Enter password" id="idp1" class="bg-primary">
+     		<label for="idta1">Comment</label>
+     		<textarea rows="7" cols="20" id="idta1" class="bg-danger">Comment Here</textarea>
+     		<label for="ids1">Submit</label>
+     		<input type="submit" value="submit" class="btn btn-danger" name="submit1" id="ids1">
+     	</form>
+     </div>
+   </div>
+</div>
+<script type="text/javascript">
+	function myFunction(){
+        var b= 5.555454;
+        document.getElementById("id1").innerHTML="5.555454 toString() is<br>"+b.toString()+"<br> toExponential(1) is<br>"+b.toExponential(1)+"<br> toFixed(3) is<br> "+b.toFixed(3)+"<br> toPrecision(3) is <br>"+b.toPrecision(3);
+		}
+	function myFunction2(){
+		var a="100",c="name",b="10 20",d=true,e="10years";
+		document.getElementById("id2").innerHTML="If a=\"100\" and c=\"name\", b=\"10 20\",d=true and e=\"10years\", then <br>Number(a) =<br>"+Number(a)+"<br>Number(b) is<br>"+Number(b)+"<br>Number(c) is<br>"+Number(c)+"<br>Number(d) is<br>"+Number(d)+"and <br>Number(e) is<br>"+Number(e);
+	}
+	function myFunction3(){
+		document.getElementById("id3").innerHTML="parseInt(\"10\") is <br>"+parseInt("10")+"<br>parseInt(\"23.45\") is <br>"+parseInt("23.45")+"<br>parseInt(\"10 20 30\") is <br>"+parseInt("10 20 30")+"<br>parseInt(\"10years\") is <br>"+parseInt("10years")+"<br>parseInt(\"10 years\") is <br>"+parseInt("10 years")+"<br>parseInt(\"years10\") is<br>"+parseInt("years10")+"<br>and parseInt(\"years 10\") is<br>"+parseInt("years 10") ;
+	}
+	function myFunction4(){
+        document.getElementById("id4").innerHTML="parseFloat(\"10\") is <br>"+parseFloat("10")+"<br>parseFloat(\"23.45\") is <br>"+parseFloat("23.45")+"<br>parseFloat(\"10 20 30\") is <br>"+parseFloat("10 20 30")+"<br>parseFloat(\"10years\") is <br>"+parseFloat("10years")+"<br>parseInt(\"10 years\") is <br>"+parseFloat("10 years")+"<br>parseFloat(\"years10\") is<br>"+parseFloat("years10")+"<br>and parseFloat(\"years 10\") is<br>"+parseFloat("years 10") ;
+	}
+</script>
+</body>
+</html>

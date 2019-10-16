@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Default Parameters</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h3 class="text-danger text-center">This is About Default Parameters</h3>
+		</div>
+		<blockquote>Please check the console.</blockquote>
+	</div>
+	<script type="text/javascript">
+		//Default Parameters Is a way of creating a default parameter with a value. This is important in the following way:
+		
+		/*
+		(1)When the required arguments are two and you want to pass only one
+		*/
+		let func1 = (name, surname = "Onyejiaku") => name +" " +surname;
+			console.log(func1("Kelechukw"));
+			console.log(func1("Mirian"));
+
+		/*
+		(2)When you want a default parameter for some but not all - still on the existing code above:
+		*/
+			console.log(func1("Chidera","Ndukwe"));
+			console.log(func1("Theodore"));
+			console.log(func1("ELijah", "Azubuike"))
+
+		/*NOTE NOTE NOTE NOTE NOTE ----------
+			The default parameter should be the last parameter, that is the one in the RHS*/
+
+		/*EXTRA EXTRA EXTRA EXTRA EXTRA EXTRA----- "Interpolation" or "Template literal" */
+		let func2 = (car, style = "convertible") => console.log('This  ${car} is ${style}'); //The ${} is known as "Interpolation" or "Template Literal"
+			func2("SUV");
+		//INTERPOLATION DID NOT WORK
+
+
+	</script>
+</body>
+</html>

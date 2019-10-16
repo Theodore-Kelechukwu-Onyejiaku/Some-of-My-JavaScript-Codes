@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Strings 2</title>
+</head>
+<body>
+<h1>Here we try out the length of Strings</h1>
+<p>The paragraph below this is a script to count and print the total number of characters inside "Onyejiaku Theodore Kelechukwu". It made use of just the method document.getElementById() without a function</p>
+<p id="getLength"></p>
+<p>The next is the same, only that we just used the simple document.write(varaibleName.lenghth). Do not forget that the .length is the main keyword to print out the length of ant String.</p>
+<h1>Here we try out Equality</h1>
+<p>The paragraph below this is to test the boolean (x==y), when they both have the same String values but x is just a String datatype and y is an object datatype.</p>
+<p id="equality"></p>
+<p id="equality2"></p>
+
+<script>
+var myName="Onyejiaku Theodore Kelechukwu";
+document.getElementById("getLength").innerHTML=myName.length;
+document.write("<br>")
+</script>
+<script>
+var x="kc";
+var y=new String("Kc");
+document.getElementById("equality").innerHTML=(x==y);
+document.getElementById("equality2").innerHTML=(x===y)
+</script>
+</body>
+</html>

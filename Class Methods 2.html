@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Testing Parenthesis For Methods In Classes</title>
+</head>
+<body>
+	<h1>Please see the console.</h1>
+	<script type="text/javascript">
+		class BankAccount{
+			constructor(depo, wi){
+				this.depo = depo;
+				this.wi = wi;
+			}
+
+			accountInfo(){
+				console.log("Hello and nice to meet you today\nYour account balance is "+this.depo);
+			}
+			deposit(ammt){
+				this.depo += ammt;
+				console.log("Your new account balance is "+this.depo);	
+			}
+			withdraw(ammt){
+				if(ammt > this.depo){
+					console.log("You can not withdraw!!!\nInsufficient Balance");
+				}
+				else{
+					this.depo -= ammt;
+					console.log("Your new account balance is "+this.depo)
+				}
+			}
+		}
+		const savingsAcct = new BankAccount(10000,0)
+		savingsAcct.accountInfo();
+		savingsAcct.deposit(5000);
+		savingsAcct.deposit(3000);+
+		savingsAcct.accountInfo();
+		savingsAcct.withdraw(10000);
+		savingsAcct.withdraw(8000);
+		savingsAcct.withdraw(5000);
+		savingsAcct.accountInfo();
+		savingsAcct.deposit(1000000);
+		savingsAcct.withdraw(50000);
+		console.log(savingsAcct.wi);
+		console.log(savingsAcct.depo);
+	</script>
+
+</body>
+</html>

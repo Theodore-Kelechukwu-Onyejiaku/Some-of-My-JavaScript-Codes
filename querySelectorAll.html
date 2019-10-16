@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>document.querySelectorAll()</title>
+</head>
+<body>
+	<div>
+		<ul>
+			<li><a href="#">Uploading A Picture</a></li>
+			<li><a href="#">Fetching From a Database</a></li>
+			<li><a href="#">Creating an App Easily</a></li>
+			<li><a href="#">Dynamic Effects</a></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var myLinks = document.querySelectorAll("a");
+
+		var firstLink = myLinks[0];
+		var secondLink = myLinks[1];
+		var thirdLink = myLinks[2];
+		var fourthLink = myLinks[3];
+
+		console.log(fourthLink.textContent);
+		console.log(firstLink.textContent);
+
+//Note that just like getElementsByTagName and getElementsByClassName, the querySelectorAll creates an array of all the matching selector elements.
+	</script>
+</body>
+</html>

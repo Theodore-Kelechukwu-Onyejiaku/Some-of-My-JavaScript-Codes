@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lan="en">
+<title>JavaScript Examples</title>
+<meta charset="UTF-8">
+<meta name="Author" content="Onyejiaku Theodore Kelechukwu">
+<meta name="viewport" content="width:device-width" initial-scale="1.0">
+<meta http-equiv="refresh" content="50">
+<!--Here I add the my first script in web development-->
+<script>
+   function paragraphChanger(){
+document.getElementById("demo").innerHTML="Paragraph Changed";
+   }
+   </script>
+</head>
+<body style="background-color:gray"><h1 align="center">Here we use the script inside the head section</h1>
+<p id="demo">This is a paragraph. And this paragraph will be changed by an already created function called paragraphChanger placed at the head section of this html document. However, this function would be initiated by the button below!</p>
+<button type="button" onclick="paragraphChanger()">Try It</button>
+<p id="first">This is a paragraph. This paragraph will be changed by a function that has been created inside the body tag of this html document. And the function is called paragraphChanger1. And this function would be initiated using the button provided below this paragraph.</p>
+<button type="button" onclick="paragraphChanger1()">Try it</button>
+<p id="external1">This is a paragraph. This paragraph would be changed by an external JavaScript file which would be linked using the src attribute inside the script tag. Try it with the button below.</p>
+<button type="button" onclick="externalJS1()">Try It</button>
+<h1 align="center">Here we use the methods that are used for displaying data in java script</h1>
+<p id="second">This is a paragraph. Here we apply the method <b>innerHTML</b> which writes into a html output. Miraculously, the output is no longer this paragraph you are reading right now but 11!</p>
+<script>document.getElementById("second").innerHTML=5+6;</script>
+<p>This is another paragraph for the method called <b>window.alert()</b>. Wow! It displayed a dialog box showing the number 11!</b>
+<script>window.alert(5+6);</script>
+<p>This is another paragraph. Here we are using another method called <b>console.log()</b>, although it is used for debugging purposes.</p>
+<script>console.log(5+6);</script>
+<script src="externalJS1.js"></script>
+<script>
+    function paragraphChanger1(){
+	document.getElementById("first").innerHTML="Second paragraph is changed";
+	}
+</script>
+<noscript>window.alert("Sorry Your Browser Does not support javascript");</noscript>
+<h1 align="center">Here we try another external javascript file that would require no function of button to run but just the externally created code itself.</h1>
+<script src="externalJS2.JS"></script>
+<script src="externalJS3.js"></script>
+<script>var variable=5;
+        var askme=100;
+		variable+=askme;
+        console.log(variable);
+		
+		var decide="The programming lord";
+		var edit="This is"+" "+"Pogramming";
+		console.log(edit);
+
+</script>
+<p>
+<script>var name=10+10+"buyers";
+         document.write(name);
+</script>
+</p>
+<p>
+<script>var variable="buyers"+10+10;
+		document.write(variable);
+</script>
+</P>
+<p><script>var variable="20"+"10"+"is";
+           console.log(variable);
+   </script>
+</p>
+<p><script>var number=2e5;
+           document.write(number);
+    </script>
+</p>
+</body>
+</html>

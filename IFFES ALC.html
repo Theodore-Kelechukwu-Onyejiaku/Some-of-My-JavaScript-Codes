@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IIFEs</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h2 class="text-center text-success">This is about function scope
+			</h2>
+		</div>
+		<blockquote>
+		Please check the console.
+		</blockquote>
+	</div>
+
+	<script type="text/javascript">
+	///////////////////////////////
+	//(1) This app is not an IFFE
+		const app1 = function(){
+			console.log("app1 is not immediately invoked");
+		}
+		app1();
+	///(2) This app is immediately invoked
+		const app2 = (function(){
+			console.log("app2 is immediately invoked");
+		})();
+	</script>
+</body>
+</html>
+
+	

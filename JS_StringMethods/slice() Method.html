@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>slice() Method</title>
+</head>
+<body>
+<p id="one">Apple, Banana, Watermelon</p>
+
+<button onclick="SliceFunction()">(0,5)</button>
+<p id="two"></p>
+
+<button onclick="SliceFunction()">(-10)</button>
+<p id="three"></p>
+
+<button onclick="SliceFunction()">(-18,-13)</button>
+<p id="four"></p>
+
+<script type="text/javascript">
+	function SliceFunction(){
+         var fruits = document.getElementById("one").innerHTML;
+         var newFruit1 = fruits.slice(0,5);
+         var newFruit2 = fruits.slice(-10);
+         var newFruit3 = fruits.slice(-18,-12);
+
+
+         document.getElementById("two").innerHTML=newFruit1;
+         document.getElementById("three").innerHTML=newFruit2;
+         document.getElementById("four").innerHTML=newFruit3;
+
+	}
+</script>
+</body>
+</html>

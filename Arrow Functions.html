@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrow Functions</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h3 class="text-danger text-center">This is About Arrow Functions in Javascript</h3>
+		</div>
+		<blockquote>Please check the console.</blockquote>
+	</div>
+	<script type="text/javascript">
+		//ARROW Functions 	ARROW FUNCTIONS
+		
+		//(1) No Parameter
+		let func1 = () => 123;
+		console.log(func1());
+
+		//(2) One parameter
+		let func2 = (name) => name;
+		console.log(func2("Mary"));
+
+		//(3) Two Parmeters
+		let func3 = (surname, name) => surname +" "+ name;
+		console.log(func3("Alimo", "Rosemary"));
+
+		//(4) We don't want to use the arrow to return our values
+		let func4 = (car, type) => {
+			return car +" "+type;
+		} 
+		console.log(func4("Limousine","convertible"));
+
+		//(5) Underscore as a parameter, here we are either going to use the parameter or not
+		/*let func5 = _ => {
+			return _;
+		}
+		console.log(func5("Hello"));
+		*///DID NOT WORK
+
+		/* NOTE NOTE NOTE: Arrow keys do not have their own this value. Also note that he "this" keyword works for only objects*/
+
+		let obj1 = {
+			ppt1 : 123,
+			ppt2 : function(){
+				console.log(this);	//refers to obj1. Because ppt2 is a function, and ppt2() is now inside the obj1 object. So it is now a subject of it
+			},
+			ppt3 : this,	// refers to Window. Because ppt3 is just a property
+			ppt4 : function(){
+				console.log(this);		
+				let any = function(){
+					console.log(this);
+				}
+				any();
+			},
+		};
+		obj1.ppt2();
+		console.log(obj1.ppt3);
+		obj1.ppt4();
+	</script>
+</body>
+</html>

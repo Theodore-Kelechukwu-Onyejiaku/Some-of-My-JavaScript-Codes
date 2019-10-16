@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile App</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../awesome/css/font-awesome.css">
+</head>
+<body id="bodyDocument">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-md-6 col-sm-6 col-md-6 col-lg-6">
+				<div class="jumbotron">
+					<forn role="form" name="imageForm">
+							<input type="file" class="form-control" id="in" accept="image/*" name="myImage">
+					</forn>
+					<button class="btn btn-danger" id="uploader">Upload</button>
+				</div>
+			</div>
+			<div class="col-xs-6 col-md-6 col-sm-6 col-md-6 col-lg-6" id="imageDiv">
+				<img class="img-responsive img-rounded" alt="Uploaded Image" id="imager">
+			</div>
+		</div>
+	</div>
+	<form name="profile">
+		<input type="text" autofocus name="myInput">
+		<br><br>
+	</form>
+	<button type="submit" class="btn btn-danger" id="btn">Submit</button><br><br>
+	<div id="division">
+		<p id="p1"></p>
+	</div>
+	<form name="form2">
+		<input type="text" name="input2" placeholder="Enter Departments">
+	</form><br>
+	<a id="btn2"><i class="fa fa-plus-circle fa-2x"></i></a>
+	
+<div class="table-responsive">
+	<table class="table table-striped">
+		<thead>
+			<tr><th>Departments</th></tr>
+		</thead>
+		<tfoot><tr><td>@FUTO Nigeria</td></tr></tfoot>
+		<tbody id="tBody">
+			<tr class="danger" ><td>IMT</td></tr>
+		</tbody>
+	</table>
+</div>
+</body>
+<script type="text/javascript">
+var n = 0;
+var arr = [];
+
+//This event listener Makes it possible to create a paragraph that will have the its innerText value as the input value of a form input at the click of a button
+	document.getElementById("btn").addEventListener("click",function(){
+		var myDiv = document.getElementById("division");
+		var myInput = document.profile.myInput.value;
+		var myParagraph = document.getElementById("p1");
+		myParagraph.innerText = myInput;
+		var nwP = document.createElement("p");
+		myDiv.appendChild(nwP);
+		nwP.innerText = myInput;
+		nwP.style.border = "3px solid orange"
+		nwP.style.width = "200px"
+});
+
+//This event listener will add some table data from the input value of a form input at the click of an add button.
+/*
+	Today 15/08/19, I want to add some changes which will be the follwing:
+	1.To give this new table data the same class as the first table data in the markup.
+	---------NEGATIVE
+*/
+	document.getElementById("btn2").addEventListener("click", function(){
+		var input2 = document.form2.input2.value;
+		var tableBody = document.getElementById("tBody");
+		var nwTableData = document.createElement("tr");
+		tableBody.style.padding = "40px";
+		tableBody.appendChild(nwTableData);
+		nwTableData.innerText = input2;
+		nwTableData.style.backgroundColor= "orange";
+	});
+/*var bodyDoc = document.getElementById("bodyDocument");
+var ps = document.createElement("p");
+document.getElementById("bodyDocument").appendChild(ps);
+var txts = document.createTextNode("Hello there, how are you doing?");
+	bodyDoc.appendChild(ps);
+	//ps.appendChild(txts);
+	ps.innerText = ("Now we are getting our hands dirty");
+	ps.style.border = "3px solid orange";*/
+
+
+//Now we want select an imag and then this image will be diaplayed in another section of our body
+	document.getElementById("uploader").addEventListener("click", function(){
+		var myInput = document.imageForm.myImage.value;
+		var divImage = document.getElementById("imager");
+		divImage.src = myInput;
+	});
+</script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTTP REQUEST: weather checker</title>
+	<meta charset="utf-8">
+	<meta lang="en">
+	<meta  content="viewport" content="width = device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<style>
+		.divSpan{
+			float:right;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+			<div class="col-xs-6 col-sm-6 col-md- col-lg-6">
+				<form role="form">
+				<div class="form-group">
+					<label for="cityName">Enter your city here</label>
+					<input type="text" name="city" class="form-control" id="cityName">
+				</div>
+				<button class="btn btn-success" id="checkWeather">Check the weather</button>
+				<div class="divSpan" id="result">The weather is clouds</div>
+			</form>
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	//All our variables
+		const result = document.getElementById("result");
+		const checkButton = document.getElementById("checkWeather");
+		const city = document.getElementById("cityName");
+
+	//Create the api request object 
+		const apiRequest = new XMLHttpRequest();
+
+	/*
+	**Give it the methods it needs the open() method will set our GET method and our URL
+	**NOTE: GET is the type of request 
+	** the send() method will send the request to the api
+	*/
+		checkButton.addEventListener("submit", $event =>{
+			$event.preventDefault();
+			const chosenCity = city.value;
+			apiRequest.open("GET","https://api.openweathermap.org/date/2.5/weather?q="+chosenCity+"&APPID=634fddd3dae4a2eb8ad363b62f98ba1e");
+
+	//Now send the request
+			apiRequest.send();
+		})
+
+
+	//Now let's handle the response using the onreadystatechange() function
+		apiRequest.onreadystatechange = () =>{
+			if(apiRequest.readyState === 4){
+				if(apiRequest.status === 404){
+					return result.textContent = "City not found";
+				}
+				const response = JSON.parse(apiRequest.response);
+				result.textContent = "The weather in "+ response.name+" is "+ response.weather[0].main+".";
+			}
+		}
+
+		
+	</script>
+</body>
+</html>

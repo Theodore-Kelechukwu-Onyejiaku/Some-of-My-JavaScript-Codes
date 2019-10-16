@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inheritance</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h2 class="text-danger text-center">Inheritance</h2>
+		</div>
+		<blockquote>Please see the console</blockquote>
+	</div>
+	<script type="text/javascript">
+	////---------Inheritance is used so as to avoid rewriting codes over and over again.
+
+		class Continent{
+			constructor(country){
+				this.continent = this.searchContinent();
+				this.country = country;
+			}
+			searchContinent(){
+				switch(this.country){
+					case "Nigeria" : return "Result : Africa";
+					break;
+
+					case "England" : return "Result : Europe";
+					break;
+
+					case "China" : return "Result : Asia";
+					break;
+
+					case "Australia" : return "Result : Australia";
+					break;
+
+					case "Mexico" : return "Result : South America";
+					break;
+
+					case "USA" : return "Result : North America";
+					break;
+
+					case "Antarctica" : return "Result : Antarctica";
+					break;
+
+					case "" : return "No input!!!";
+					break;
+
+					default: return "Wrong Input!!!";
+				}
+			}
+		}
+
+	class Country extends Continent{
+
+	}
+	//Create Nigeria as an instance of Africa
+	let nigeria = new Country("Nigeria");
+	let england = new Country("England");
+	let mexico = new Country("Mexico");
+	let australia = new Country("Australia");
+	let antarctica = new Country("Antarctica");
+	let china = new Country("China");
+		console.log(nigeria.searchContinent());
+		console.log(england.searchContinent()); 
+		console.log(mexico.searchContinent());
+		console.log(australia.searchContinent());
+		console.log(antarctica.searchContinent());
+		console.log(china.searchContinent());
+
+
+		console.log(nigeria.country);	//"Nigeria"
+		console.log(nigeria.continent)	//"Result : Africa"
+
+		//Inheritance now Inheritance now
+
+	//This is the SUPER CLASS
+	class Student{
+		constructor(name, dept, faculty){
+			this.name = name;
+			this.dept = dept;
+			this.faculty = faculty;
+		}
+			studentInfo(){
+				console.log("The student's name is "+this.name+" and the department is "+this.dept+" and the faculty is "+this.faculty);
+			}			
+	};
+
+	//Now this is a SUBCLASS of the SUPER CLASS, and it will inherit the properties of the SUPER CLASS
+	class IMTstudent extends Student{
+		constructor(name, dept, faculty){
+			super();	//Use super if you want to override the constructor of the SUPER CLASS.
+			this.name = dept;
+		}
+
+		//Just like JAVA, you just have to specify the same method again so as to override the SUPER CLASS method.
+			studentInfo(){
+				console.log("This is rosemary, and I am a student of IT in the faculty of SCIT");
+			}
+	}
+
+
+	//Now for us to access the inheriting properties from the SUPER CLASS, we need to create an object of the SUB CLASS
+
+	let rosemary = new IMTstudent("Nwakwasi Rosemary", "IMT", "SCIT");
+
+	//Now let's access the properties of the SUPER CLASS using the object above
+	console.log(rosemary.name);
+	console.log(rosemary.dept);
+	console.log(rosemary.faculty);
+	rosemary.studentInfo();
+
+
+
+
+
+
+	//Now I want to override the studentInfo() method 
+
+
+	</script>
+</body>
+</html>

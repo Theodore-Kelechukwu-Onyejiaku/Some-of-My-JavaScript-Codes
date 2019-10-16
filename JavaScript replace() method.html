@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Replace Method</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h1 class="text-danger text-center">JavaScript replace() Method</h1>
+		</div>
+		<blockquote>Please see the console.</blockquote>
+	</div>
+	<script type="text/javascript">
+		let myAccountDetails = "Theodore Onyejiaku, Onitsha Anambra, 17, 08108524698;"
+/*
+**(1) Testing The replace() method on a single word
+*/		
+		let myNewAccountDetails = myAccountDetails.replace("Onitsha Anambra", "Orsu Imo");
+		let myDetailsWithoutComma = myAccountDetails.replace("," , "");	//Note that this only replaced the first comma. But you can replace every comma using the g, see details in number 3.
+/*
+**(2) Now let's try it out on two arguments
+*/
+		let twoWordsReplacement = myAccountDetails.replace("Onyejiaku", "Kelechukwu", "08108524698", "09026315349")//Note it was only the first two two that was worked on.
+
+/*
+**(3) Now, testing the global keyword g
+*/
+		let globalDetails = myAccountDetails.replace(/e/g, "l");
+/*
+**(4) Now let's replace two or more globally using pipes.
+*/		
+		let newGlobalDetails = globalDetails.replace(/a|e|o|l/g, "")
+
+/*
+**(5) Here is the main one
+*/
+		let newString = "Theodoroe./,./---'\"*[]{}\\=%#@####@!cjdjdjdjd";
+		let newReplacedString = newString.replace(/[.\/,.\/---'\"*[]{}\\=%#@####@!]/g, " ");
+
+		console.log(myAccountDetails);
+		console.log(myNewAccountDetails);
+		console.log(myDetailsWithoutComma);
+		console.log(twoWordsReplacement);
+		console.log(globalDetails);
+		console.log(newGlobalDetails);
+		console.log(newReplacedString);
+	</script>
+</body>
+</html>

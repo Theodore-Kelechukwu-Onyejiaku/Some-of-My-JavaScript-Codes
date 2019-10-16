@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Set Time Out</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="containter">
+		<div class="page-header">
+			<h2 class="text-center text-danger">This is about the setInterval()</h2>
+		</div>
+		<blockquote>Please Check The Console.</blockquote>
+	</div>
+
+
+<script type="text/javascript">
+	var interval = setInterval(function()
+		{console.log("hello")}, 1000);//This will console.log hello every
+
+	clearInterval(interval);//This clears the interval or makes the interval never to run
+</script>	
+</body>
+</html>

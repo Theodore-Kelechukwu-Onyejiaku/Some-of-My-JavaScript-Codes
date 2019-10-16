@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Function Scope</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h2 class="text-center text-success">This is about function scope
+			</h2>
+		</div>
+		<blockquote>
+		Please check the console.
+		</blockquote>
+	</div>
+
+<script type="text/javascript">
+	function startCar(CarId){
+		let message = "Starting...";
+		let startFn = function turnKey(){
+			let message = "Override";
+			console.log(message);
+		};
+		startFn();
+		console.log(message);
+	}
+	startCar(123); //RESULT : "Starting..."
+	
+</script>
+</body>
+</html>

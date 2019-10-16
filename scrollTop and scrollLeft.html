@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>scrollTop and scrollLeft</title>
+	<style type="text/css">
+		body{
+			height:2000px;
+		}
+		.myDiv{
+			height: 300px;
+			background-color: blue;
+			overflow:auto;
+		}
+		.content{
+			height: 800px;
+			width:2000px;
+		}
+	</style>
+</head>
+<body>
+	<h1>scrollTop and scrollLeft</h1>
+	<div class="myDiv">
+		<div class="content">Please see the console.//mouseover occurs when the user moves over an element, top-down or bottom-up.
+			//mouseover occurs when the user moves over an element, top-down or bottom-up.
+			//mouseover occurs when the user moves over an element, top-down or bottom-up.
+			//mouseover occurs when the user moves over an element, top-down or bottom-up.
+			//mouseover occurs when the user moves over an element, top-down or bottom-up.
+			//mouseover occurs when the user moves over an element, top-down or bottom-up.
+			//mouseover occurs when the user moves over an element, top-down or bottom-up.
+			//mouseover occurs when the user moves over an element, top-down or bottom-up.
+			//mouseover occurs when the user moves over an element, top-down or bottom-up.
+		</div>
+</div>
+	<script type="text/javascript">
+		let myDiv = document.querySelector("div");
+		window.addEventListener("scroll", () => {
+			console.log(myDiv.offsetTop, window.scrollY);
+		});
+
+
+		
+	</script>
+</body>
+</html>

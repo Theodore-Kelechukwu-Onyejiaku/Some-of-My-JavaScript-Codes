@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Datatypes</title>
+</head>
+<body>
+<!-- Here we use the paragraphs that are to be with our ids -->
+<p id="id1"></p>
+<p id="id2"></p>
+<p id="id3"></p>
+<p id="id4"></p>
+<p id="id5"></p>
+<P draggable="true">This paragraph is dragable</P>
+<Script>
+
+/*Here we try our the type of operator*/
+var name="Theodore";
+var age=22;
+var department; //undefined datatype
+var girl=null;   //null value but object type
+
+
+
+//Here we get their datatypes
+ document.getElementById("id1").innerHTML=(typeof age);
+ document.getElementById("id2").innerHTML=(typeof name);
+ document.getElementById("id3").innerHTML=(typeof department);
+ document.getElementById("id4").innerHTML=(typeof girl);
+
+ //Here we do it another way
+ console.log(typeof true);
+ console.log(typeof "name");
+ console.log(typeof 3.14);
+ console.log(typeof [1,2,3,4]);
+ console.log(typeof {age:20, name:"Theodore"})
+</Script
+</body>
+</html>

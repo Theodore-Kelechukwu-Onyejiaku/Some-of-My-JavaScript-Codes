@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta lang="en">
+	<title>document.getElementByTagNames</title>
+</head>
+<body>
+	<div>
+		<p>This is the first Paragraph</p>
+		<p>This is the second paragraph</p>
+		<p>This is the third paragraph</p>
+		<p>This is the fourth paragraph</p>
+		<p>This is the fifth paragraph</p>
+	</div>
+	<script type="text/javascript">
+		var ourParagraphs = document.getElementsByTagName("p");
+
+		var firstParagraph = ourParagraphs[0];
+		var fourthParagraph = ourParagraphs[3];
+
+		console.log(firstParagraph.textContent);
+		console.log(fourthParagraph.textContent);
+
+//NOTE THAT THIS IS JUST THE SAME FOR document.getElementsByClassName()
+	</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Goodness</title>
+	<style type="text/css">
+		#button1 {
+			color:blue;
+			background-color:white;
+			padding:10px;
+			width:100px;
+			border:3px solid blue;
+			margin:10px;
+		}
+		#button1:hover{
+			background-color:blue;
+			color:white;
+			cursor:pointer;
+			margin:10px;
+			box-shadow: 5px 5px 5px green, 5px 5px 5px blue;
+
+		}
+		#button2 {
+			background-color:white;
+			color:green;
+			padding: 10px;
+			width: 100px;
+			border: 3px solid green;
+			margin:10px;
+		}
+		#button2:hover{
+			background-color:green;
+			color:white;
+			cursor:pointer;
+			margin:10px;
+			box-shadow: 5px 5px 5px blue, 5px 5px 5px green;
+		}
+		#input1, #input2, #input3{
+			border:3px solid red;
+			width: 210px;
+			margin:10px;
+		}
+		button{
+			padding:10px;
+			width: 100px;
+			margin:10px;
+		}
+		button#equalTo{
+			width:225px;
+		}
+
+
+
+
+	</style>
+</head>
+<body>
+	<input type="text" name="" id="input1"><br>
+	<input type="text" name="" id="input2"><br>
+	<input type="text" name="" id="input3"><br>
+	<button id="button1" onclick="plus()">+</button><button id="button2" onclick="minus()">-</button><br>
+	<button onclick="two('2')">2</button>
+	<button onclick="seven('7')">7</button><br>
+	<button id="equalTo">=</button>
+	<script type="text/javascript">
+		function two(value){
+			document.getElementById("input1").value  += value
+		}
+		function seven(value){
+			document.getElementById("input2").value  += value
+
+		}
+		function plus(){
+			var input1 = document.getElementById("input1").value;
+			var input2 = document.getElementById("input2").value;
+			var plusValue =eval(input1 +" + "+input2);
+
+			console.log(plusValue);
+			document.getElementById("input3").value= plusValue;
+		}
+		function minus(){
+			var input1 = document.getElementById("input1").value;
+			var input2 = document.getElementById("input2").value;
+			var plusValue =eval(input1 +" - "+input2);
+
+			console.log(plusValue);
+			document.getElementById("input3").value= plusValue;
+		}
+		function equlTo(){
+			
+		}
+	</script>
+</body>
+</html>

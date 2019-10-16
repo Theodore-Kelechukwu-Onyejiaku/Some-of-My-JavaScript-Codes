@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Recursion</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h2 class="text-danger text-center">Javascript Recursion</h2>
+		</div>
+		<blockquote>Please see the console.</blockquote>
+	</div>
+	<script type="text/javascript">
+ 
+		let comments = [
+			{comment: 1, reply:["Hello There", "How are you"]},
+
+		]
+		const recursive = (num) =>{
+			if(num === 0) return;
+			recursive(num - 1);
+			return num;
+		}
+		let result = recursive(20);
+		console.log(result);
+	</script>
+</body>
+</html>

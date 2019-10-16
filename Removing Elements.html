@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Removing Elements
+	</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<head>
+		<h3>This is about creating Elements</h3>
+	</head>
+	<main  id="main">
+		<div id="demo"></div>
+	</main>
+	<script type="text/javascript">
+//
+////THIS IS THE CONTINUATION OF OUR OTHER CODE TITLED CREATING ELEMENTS
+////THIS IS THE CONTINUATION OF OUR OTHER CODE TITLED CREATING ELEMENTS
+//  HERE WE WILL REMOVE ELEMENTS THAT HAVE BEEN ADDED
+//	
+//Creating a Text Node and adding it to our created element paragraph element
+			var text1 = document.createTextNode("This is just some text.");
+			var p1 = document.createElement("p");
+			var myDiv = document.getElementById("demo");
+
+			p1.appendChild(text1);
+			myDiv.appendChild(p1);
+
+//Let us create an element and make it a child node of our div with "demo" id
+			var p2 = document.createElement('p');
+			var nwText = document.createTextNode("Hello everybody, hope you are feeling fine");
+			p2.appendChild(nwText);
+			myDiv = document.getElementById("demo");
+			myDiv.appendChild(p2);
+
+//Now we want to add a new text node to the new paragraph which is nwp
+			var text2 = document.createTextNode(" This is another new texts");
+			p1.appendChild(text2);
+//Now let us create an image element
+			var nwImg = document.createElement("img");
+				nwImg.src="../Images/Chrysanthemum.jpg";
+				nwImg.style.width = "300px";
+				nwImg.style.margin= "auto";
+//Now let us add this image to our div 
+			myDiv.appendChild(nwImg);
+
+/*
+*****Here we begin with removing of elements
+*/
+
+//Now let us remove our paragraph elements which is p1 and p2
+			myDiv.removeChild(p1);
+			myDiv.removeChild(p2);
+
+//Now let us remove and replace out image element with a new image
+			var nwImg2 = document.createElement("img");
+				nwImg2.src = "../Images/Penguins.jpg";
+				nwImg2.style.width = "300px";
+				nwImg2.style.margin= "auto";
+				myDiv.replaceChild(nwImg2,nwImg);
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+search() Method		
+	</title>
+</head>
+<body>
+<p id="one">Locate the index of "index".</p>
+<button onclick="searchFunction()">find it</button>
+<p id="two"></p>
+
+<script type="text/javascript">
+    function searchFunction(){
+	var  wow= document.getElementById("one").innerHTML;
+	var  whatposition=wow.search('');
+
+	document.getElementById("two").innerHTML=whatposition;
+}
+</script>
+
+</body>
+</html>

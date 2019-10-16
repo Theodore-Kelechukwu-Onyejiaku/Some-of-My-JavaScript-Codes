@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>offsetX and offsetY to determine cursor position</title>
+</head>
+<body>
+	<div>
+		This is my div
+	</div>
+	<script type="text/javascript">
+		let myDiv = document.querySelector("div");
+
+		myDiv.addEventListener("mouseover", ($event)=>{
+			console.log($event.offsetX);
+			console.log($event.offsetY);
+		})
+
+//mouseover occurs when the user moves over an element, top-down or bottom-up.
+
+//mousemove occurs when the user moves left and right on an element
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Expanding Objects Using Prototypes</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h3 class="text-danger text-center">This is About Expanding Object Functionalities Using Prototypes in Javascript</h3>
+		</div>
+		<blockquote>Please check the console.</blockquote>
+	</div>
+	<script type="text/javascript">
+	/*Prototypes can help instances expand their functionalities*/
+	
+	//(1) For String Object	
+		let myString = "My own string";
+		 //Here is the expansion of the prototype
+			String.prototype.greet = function(){
+				console.log("Hello I am an expanded prototype");
+			}
+		myString.greet();
+
+	//(2) For number Object 
+		let myNumber = 100;
+		//Here is the expansion of every number type instance
+			Number.prototype.newNumber = 10000000000000000000000000000000000000000000000000000000000000000000;
+		console.log(myNumber.newNumber);
+/*NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE
+	------Prototypes are not necessarily methods or functions, they can just be properties too---------
+*/
+	</script>
+</body>
+</html>

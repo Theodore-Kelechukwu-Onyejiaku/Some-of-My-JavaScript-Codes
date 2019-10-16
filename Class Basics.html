@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Class Basics</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h2 class="text-danger text-center">Class Basics</h2>
+		</div>
+		<blockquote>Please see the console</blockquote>
+	</div>
+	<script type="text/javascript">
+		//Classes, for me, are just used in place of Constructors
+		class Course{
+
+		}
+		let course = new Course();
+		console.log(course);
+
+		class Students{
+
+		}
+		let imtStudents = new Students();
+		let pmtStudents = new Students();
+		let fmtStudents = new Students();
+		let fstStudents = new Students();
+
+			console.log(imtStudents);
+			console.log(pmtStudents);
+			console.log(fstStudents);
+
+		// I can still create properties out of classes
+		Students.prototype.hello = () => alert("Hello student");
+		
+
+		imtStudents.hello();
+	</script>
+</body>

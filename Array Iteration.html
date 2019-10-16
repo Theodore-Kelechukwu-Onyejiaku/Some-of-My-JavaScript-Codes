@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array Iteration</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h3 class="text-danger text-center">This is about Array Iteration Without Using for Loop</h3>
+		</div>
+		<blockquote>Please check the console.</blockquote>
+	</div>
+	<script type="text/javascript">
+		let arr = [
+			"product1", "product2", "product3"
+		]
+	/*(1) USING for...of loop */
+		for(let product of arr){
+			console.log(product);
+		}
+	/*(2) USING forEach */
+		arr.forEach(product => console.log(product));
+			//OR
+		arr.forEach((product, index) => console.log(product, index));//the index is optional, it only displays the indices of the elements of the array. And it is optional.
+
+	/*(3) USING filter 
+		The filter method selects from the array and returns the expected value from it.
+	*/
+		let requiredProduct = arr.filter(product => (product === "product1"));
+		console.log(requiredProduct);	//The filter method returns an array
+
+	/*(4) Using every
+		The every method returns true or false. And it means all the elements of the array		
+	*/
+		let result = arr.every(product => product === "product1");	//This means return true if all the elements are all "product1"
+		console.log(result);
+		console.log(arr.every(product => {
+			product == "product1"
+		}))
+
+	/*(5) Using find 
+		The find method returns the first value with the specified requirement
+	*/
+		let firstValue = arr.find(product => product === "product3");
+		console.log(firstValue);
+	let name = "Template Literal";
+	console.log(`The name is ${name}`);
+	</script>
+</body>
+</html>

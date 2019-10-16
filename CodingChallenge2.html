@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coding Challenge 2</title>
+</head>
+<body>
+<p> This is my second coding Challenge</p>
+<script>
+var ages = [2005, 1990, 2010, 1996, 2000];//An Array with random ages
+var emptyArray = [];
+document.write(ages+"<br>");  //Displays the initial array
+
+function filler(inArray, nullArray){
+        for(var x = 0; x < inArray.length; x++){
+		nullArray[x] = inArray[x]; 
+	}
+	return nullArray;  //The return keyword is needed because we need the value(s) of this variable to be printed or used whenever this function is called in another function or method. 
+}
+filler(ages, emptyArray);       //Fills the emptyArray with the values of the random ages of the elements of the ages array.
+document.write(emptyArray+"<br>");
+
+
+var trueAges = [];
+function calculateAge(inArray, nullArray){
+	for(var i = 0; i < inArray.length; i++){
+		nullArray[i] = 2019 - inArray[i];
+	}
+	return nullArray;
+}
+calculateAge(emptyArray, trueAges) //Calculates the true ages of the random ages
+document.write(trueAges+"<br>");
+
+
+var trueFalse = [];
+   function checkAge(inArray, nullArray){
+       for(var i = 0; i < inArray.length; i++ ){
+        if(inArray[i] >= 18){
+          nullArray[i] = true;
+        }
+        else if(inArray[i] <= 18){
+          nullArray[i] = false;
+        }
+       }
+       return nullArray;
+   }
+
+checkAge(trueAges, trueFalse);//Fills an empty array with true of false depending on the value of the trueAges array
+document.write(trueFalse);
+
+</script>
+</body>
+</html>
+
+
+

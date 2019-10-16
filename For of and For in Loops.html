@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For in and For of Loops</title>
+</head>
+<body>
+	 <h1>Please see the console.</h1>
+	 <script type="text/javascript">
+	 	let passengers=[ 
+	 	{
+	 		name: "Goodness",
+	 		ticketNumber: 229,
+	 		age: 100
+	 	},
+
+	 	 passenger2 = {
+	 		name: "James",
+	 		ticketNumber: 345,
+	 		age: 34
+	 	},
+
+	 	passenger3 = {
+	 		name: "Ajoke",
+	 		ticketNumber: 344,
+	 		age: 16
+	 	}
+	 ];
+
+	 for(let passenger in passengers){
+	 	console.log(passengers[passenger]);
+	 }
+
+	 for(let passenger of passengers){
+	 	console.log(passenger.name);
+	 }
+
+	 //Now I want to keep a dictionary or map of all this objects in an array and reference them in it.
+	 let myDictionary = new Map();
+	 for(let i in passengers){
+	 	myDictionary.set([passengers[i].name], passengers[i])
+	 }
+	 console.log(myDictionary);
+	 console.log(myDictionary.size);
+	 console.log(myDictionary.keys())
+	 console.log(myDictionary.has("James"));
+	 ;
+
+
+	 let myArr = Array.from(myDictionary);
+	 console.log(myArr);
+	 console.log(myArr[0]);
+	 </script>
+</body>
+</html>

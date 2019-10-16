@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Recursive Function</title>
+	<meta charset="utf-8">
+	<meta lang="en">
+</head>
+<body>
+
+	<script type="text/javascript">
+		let myTreeOfComments = {
+			content : "1",
+			subcomments : [
+				{content: "1a", subcomments: [] },
+				{content: "1b", subcomments: [
+					{content:"1b-i", subcomments:[] }
+				] },
+				{content:"1c", subcomments: [
+					{content: "1c-a", subcomments: [
+						{content: "1c-a-i", subcomments: []},
+						{content: "1c-a-ii", subcomments:[]}
+					]},
+					{content: "1c-b", subcomments: []}
+					
+				]},
+				{content:"1d", subcomments: []}
+
+			]
+		};
+		
+		const getAllComments = (comment) => {
+			var allComments = comment.content;
+			for(let comments of comment.subcomments){
+				 allComments += "\n" + getAllComments(comments);
+			}
+			return allComments;
+		}
+
+		console.log(getAllComments(myTreeOfComments));
+	</script>
+</body>
+</html>

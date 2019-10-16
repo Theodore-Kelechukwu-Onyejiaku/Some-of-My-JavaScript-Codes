@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Closures</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h2 class="text-center text-success">This is about function scope
+			</h2>
+		</div>
+		<blockquote>
+		Please check the console.
+		</blockquote>
+	</div>
+<script type="text/javascript">
+	"use strict";
+	let app = (function(){
+				let carId = 123;
+				let getId = function(){
+					return carId;
+				};
+				return {
+					hello : getId
+				}
+	})();
+	console.log(app.hello());
+
+	var app2 = () => {
+		var message = "Hello, how are you doing?";
+		//console.log(message);
+	}
+	console.log(app2.message);
+</script>
+</body>
+</html>

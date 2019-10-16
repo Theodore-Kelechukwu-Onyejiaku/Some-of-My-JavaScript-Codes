@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>element.children DOM property</title>
+	<meta charset="utf-8">
+	<meta lang="en">
+</head>
+<body>
+	<div>
+		<p>First paragraph</p>
+		<p>Second paragraph</p>
+		<p>Third paragraph</p>
+		<p>Fourth paragraph</p>
+	</div>
+	<script type="text/javascript">
+		var myDiv = document.querySelector("div");
+			
+			console.log(myDiv.children);	//This consoles a HTMLCollection of index and p elements.
+
+			console.log(myDiv.children[0]);
+	</script>
+</body>
+</html>

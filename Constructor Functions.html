@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Constructor Functions</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h3 class="text-danger text-center">This is About Arrow Functions in Javascript</h3>
+		</div>
+		<blockquote>Please check the console.</blockquote>
+	</div>
+	<script type="text/javascript">
+		//CONSTRUCTOR FUNCTIONS ARE SIMILAR TO THE NEW TOPIC CLASSES INTRODUCED IN ES6. CONSTRUCTORS ARE USED TO CREATE INSTANCES
+		//
+		/*(1) Constructors are created in the follwing way, upper Camel Case:*/
+		let Func1 = () => console.log("Hello everyone");
+		Func1();	//Do not use constructors like anyother function
+
+		/*(2) Create instances of the Constructor*/
+		function Func2(country, state, lga){
+			this.country = country;
+			this.state = state;
+			this.lga = lga;
+			this.message = function(){
+				console.log("Hello, I am an instance of a constructor, from "+this.country);
+			};
+		}
+			//now create instances.
+			let sFunc2 = new Func2("Ghana", "Accra", "Oru");
+				console.log(sFunc2.country);
+				sFunc2.message();
+/*NOTE NOTE NOTE NOTE----
+		Do not write constructors as expressions but as real functions
+*/	
+		/*(3) the message()  
+
+	</script>
+</body>
+</html>

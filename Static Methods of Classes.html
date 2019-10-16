@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Static Methods of Classes</title>
+</head>
+<body>
+	<h1>Please see the console.</h1>
+<script type="text/javascript">
+	class MyMathClass{
+			static hello(){
+				console.log("Hello how are you user?");
+			}
+
+			static add(a,b){
+				return a + b;
+			}
+
+			static diff(a,b){
+				return a - b;
+			}
+
+			static pow(a,b){
+				for(let i = 1; i < b ;i++){
+					a *= a;
+				}
+				return a;
+			}
+			
+		}
+
+console.log(MyMathClass.add(54,65));
+console.log(MyMathClass.pow(2,3));
+console.log(Math.pow(2,3));
+</script>
+</body>
+</html>

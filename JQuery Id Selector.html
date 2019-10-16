@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery id Selector</title>
+	<script type="text/javascript" language="javascript" src="jquery/jquery.js"></script>
+	<script type="text/javascript"></script>
+</head>
+<body>
+	<div id="div1">
+		<p id="div1">This is the first paragraph</p>
+		<p id="div">Thsis is the second paragraph</p>
+	</div>
+	<div id="div1">This is an anonymous div</div>
+	<div id="div2">
+		<p id="div2">This is the first paragraph of my second div</p>
+		<p id="div2">This is the second paragraph of my second div</p>
+	</div>
+	<button class="btn">Click Me</button>
+	<script>
+	$("document").ready(function(){	//This means that this code will execute when all the DOM elements have been rendered
+		document.getElementById("div1").innerHTML="HELLO";
+		$(".btn").click(function(){	//This means that the button above, when clicked, will perform the following:
+			$("#div1").css("border","3px solid red");	//Change the style attributes of all elements with id #div1
+
+			$("#div2").html("This is a change in all elements with id as div2");	//Change the innerHTML of all the elements with #div2
+		});
+	});
+	</script>
+</body>
+</html>
+<!--	NOTICE NOTICE NOTICE NOTICE NOTICE 
+Note that selection is meant only for the first element that has the id. This means that JQuery id selector selects only the first element
+-->

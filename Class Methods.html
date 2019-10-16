@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="/icon" href="../Images/Koala.jpg">
+	<title>Class Methods</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	z
+	<script type="text/javascript">
+		//--------------Methods in classes are used to replace the traditional way of creating methods in classes by using the function keyword.
+
+	class Car {
+		constructor(name){
+			this.name = name;
+		}
+		blare(){	//Here, we did not use the function keyword. This is the newness of methods in Classes 
+			this.result = (name[0] == "a") ? "a" : "an";
+			console.log("PEE!PEE!!PEE!!! "+this.name +" is about to pass");
+
+		}
+	}	
+
+	let suv = new Car("My SUV");
+	suv.blare();
+	let toyota = new Car("My Toyota");
+	toyota.blare();
+ 	
+ 	
+	</script>
+</body>
+</html>

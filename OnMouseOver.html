@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<title>OnMouseOver event</title>
+</head>
+<body class="container">
+   <p onmouseover="onMouseFunction()" id="myMouseOver">This is a paragraph. This paragraph will change its display when the mouse is hovered above it.</p>
+   <div class="well-lg">
+             <p class="text-success">This is a basic well</p>
+   </div>
+   <table align="center" class="table=hover table-striped table-bordered table-hover">
+   <caption> This is just a list of some goods sold in a store oh sorry</caption>
+    <tr><th>Name</th><th>Dept</th><th>Registration no.</th></tr>
+    <tr><td>Theodore<td>information mgt tech<td>20151014166</tr>
+    <tr><td>Elijah<td>information mgt tech<td>20101011186</tr>
+    <tr><td>Emeka<td>information mgt tech<td>20101011231</tr>
+    <tr><td>Paul<td>information mgt tech<td>20101011146</tr>
+</table>
+
+   <script type="text/javascript">
+      function onMouseFunction(){
+      	document.getElementById("myMouseOver").innerHTML="This is the changed paragraph"
+      }
+   </script>
+</body>
+</html>

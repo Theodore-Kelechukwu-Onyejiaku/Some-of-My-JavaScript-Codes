@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Class Constructors and Properties</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h2 class="text-danger text-center">Class Constructors and Properties</h2>
+		</div>
+		<blockquote>Please see the console</blockquote>
+	</div>
+	<script type="text/javascript">
+		class University{
+			constructor(school,faculty, dept){	//Constructors are used to assign properties
+				this.school = school;
+				this.faculty = faculty;
+				this.dept = dept;
+			}
+		}
+		let nigeria = new University('FUTO',"SCIT", "IT");
+			console.log(nigeria.school);
+			console.log(nigeria.faculty);
+			console.log(nigeria.dept);
+
+
+//OBSERVATION: Constructors are used to assign properties. And this is different from the traditional way.
+	</script>
+</body>
+</html>

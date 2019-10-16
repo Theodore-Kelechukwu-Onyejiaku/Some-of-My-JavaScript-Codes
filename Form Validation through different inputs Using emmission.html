@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Form Validation through Inputs using emmissions
+	</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<style>
+		.jumbotron{
+				height: 600px;
+				background-color: rgb(222,0,0);	
+				color:white;	
+			}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<h1 class="text-primary">Hobbies</h1>
+				<form role="form" class="text-primary" id="form1">
+						<input type="checkbox" value="Sports" id="Sports"><label for="Sports">Sports</label><br>
+						<input type="checkbox" value="Music" id="Music"><label>Music</label><br>
+						<input type="checkbox" value="Food" id="Music"><label>Food</label><br>
+						<input type="checkbox" value="Travelling" id="Travelling"><label>Travelling</label>
+				</form>
+				<h2 class="text-primary">Favourite Mode of Transport</h2>
+					<input type="radio" name="Transport" value="Car"><label>Car</label><br>
+					<input type="radio" name="Transport" value="Bike"><label>Bike</label><br>
+					<input type="radio" name="Transport" value="Other"><label>Other</label><br>
+				<h2 class="text-primary">Favourite Kind of Music</h2>
+					<select name="FavouriteMusic" id="favMusic">
+						<option value="Folk Rock">Folk</option>
+						<option value="Classical">Classical</option>
+						<option value="pop">Pop</option>
+						<option value="Juju">Juju</option>
+					</select>
+
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<div class="jumbotron">
+					<h3>Your hobbies include:</h3>
+					<ul class="text-primary" id="uList">
+						<li>Sports</li>
+						<li>Music</li>
+						<li>Food</li>
+						<li>Travelling</li>
+					</ul>
+					<div>Your favourite Transport is: <span id="TransportResult"></span></div><br>
+					<div>Your Favourite Kind Of Music is: <span id="MusicResult" ></span></div>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		let sportsHobby = document.getElementById("Sports");
+		let musicHobby = document.getElementById("Music");
+		let foodHobby = document.getElementById("Food");
+		let travellingHobby = document.getElementById("Travelling")
+		let listOfHobbies = document.getElementById("uList");
+		let listOfModeOfTransport =document.getElementsByName("Transport");
+		document.getElementById("MusicResult").textContent = document.getElementById("favMusic").value;
+//Checkboxes
+		sportsHobby.addEventListener("change", $event =>{
+			if($event.target.checked){
+				listOfHobbies.children[0].classList.add("bg-info")
+			}else{
+				listOfHobbies[0].removeAttribute("class");
+			}
+		})
+		musicHobby.addEventListener("change", $event =>{
+			if($event.target.checked){
+			listOfHobbies.children[1].setAttribute("class", "bg-info")}
+		});
+
+		/*foodHobby.addEventListener("change", ($event) =>{
+			if($event.target.checked){
+			listOfHobbies.children[2].setAttribute("class", "bg-info")}
+		})
+		musicHobby.addEventListener("change", ($event) =>{
+			if($event.target.checked){
+			listOfHobbies.children[3].setAttribute("class", "bg-info")}
+		})*/
+
+//Radio Buttons
+		for(let i = 0; i < listOfModeOfTransport.length; i++){
+			listOfModeOfTransport[i].addEventListener("change", $event =>{
+				if($event.target.checked){
+					document.getElementById("TransportResult").textContent = $event.target.value;
+				}
+			})
+		}
+
+//For Selections
+		document.getElementById("favMusic").addEventListener("change",$event =>{
+			document.getElementById("MusicResult").textContent = $event.target.value;
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>What will Happen if Try was error free and catch was just as it is?
+	</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="containter">
+		<div class="page-header">
+			<h2 class="text-center text-danger">What will Happen if Try was error free and catch was just as it is?</h2>
+		</div>
+		<blockquote class="text-danger ">Please Check The Console.</blockquote>
+	</div>
+	<script type="text/javascript">
+		try{
+			console.log(a);	
+		}
+		catch(error){
+			console.log("error : ",erro r);
+		}
+		finally{
+			console.log("This will always execute");
+		}
+
+//NOTE: the try and catch only allows you to check if there will be an error, and then what to do if there is or there is not.
+//In the program above, there was no error and so the program would run smootly without stopping other programs. And if there is an error, our program will also run, but it will now be the catch that will run.
+	</script>
+</body>
+</html>

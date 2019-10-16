@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Creating Elements
+	</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="Creating Elements.js"></script>
+</head>
+<body>
+	<head>
+		<h3>This is about creating Elements</h3>
+	</head>
+	<main  id="main">
+		<div id="demo"></div>
+	</main>
+	<script type="text/javascript">
+//Creating a Text Node and adding it to our created element paragraph element
+			var text1 = document.createTextNode("This is just some text.");
+			var nwp = document.createElement("p");
+			var myDiv = document.getElementById("demo");
+
+			nwp.appendChild(text1);
+			myDiv.appendChild(nwp);
+
+//Let us create an element and make it a child node of our div with "demo" id
+			var nwPara = document.createElement('p');
+			var nwText = document.createTextNode("Hello everybody, hope you are feeling fine");
+			nwPara.appendChild(nwText);
+			myDiv = document.getElementById("demo");
+			myDiv.appendChild(nwPara);
+
+//Now we want to add a new text node to the new paragraph which is nwp
+			var text2 = document.createTextNode(" This is another new texts");
+			nwp.appendChild(text2);
+//Now let us create an image element
+			var nwImg = document.createElement("img");
+				nwImg.src="../Images/Chrysanthemum.jpg";
+				nwImg.style.width = "300px";
+				nwImg.style.margin= "auto";
+//Now let us add this image to our div 
+			myDiv.appendChild(nwImg);
+
+//Now let us clone our div with cloneNode() method and append it to our Main container
+			var nwDiv = myDiv.cloneNode();
+			var nainCon = document.getElementById("main");
+				mainCon.appendChild(nwDiv);
+			//WELL IT DID NOT WORK
+	</script>
+</body>
+</html>

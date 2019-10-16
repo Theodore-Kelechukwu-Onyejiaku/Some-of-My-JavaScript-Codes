@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Developer Defined Errors</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="containter">
+		<div class="page-header">
+			<h2 class="text-center text-danger">Develper Defined Errors</h2>
+		</div>
+		<blockquote class="text-danger ">Please Check The Console.</blockquote>
+	</div>
+	<script type="text/javascript">
+		try{
+			throw new Error("You just made an error on line 17");
+			let name = whatever;
+			console.log(name);
+		}
+		catch(error){
+			console.log(error);
+		}
+		finally{
+			console.log("This will always execute");
+		}
+//NOTE: use the throw at the very first beginning of your try block
+	</script>
+</body>
+</html>

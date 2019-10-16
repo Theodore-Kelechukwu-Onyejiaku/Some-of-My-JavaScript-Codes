@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES6 SET and MAP</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="containter">
+		<div class="page-header">
+			<h2 class="text-center text-danger">This is about the Window Object</h2>
+		</div>
+		<blockquote>Please Check The Console.</blockquote>
+	</div>
+	<script type="text/javascript">
+/**********	MAP 	MAP 	MAPS ********************
+Maps are used to store key and value pairs of different types including objects, functions and primitives
+*/
+let myMap = new Map();
+
+//Map methods
+//(1) set(key,value)
+myMap.set("k1","v1").set("k2","v2");	
+myMap.set(document.body,document.body.innerHTML);
+console.log(myMap); //wow it diplayed every tag, element, texts inside the body tag.
+
+
+//(2) has(key): returns true if a key exists and false if it doesn't
+myMap.has("k1");		console.log(myMap.has("k1"));
+
+//(3) get(key): returns the value of a key
+myMap.get("k2");		console.log(myMap.get("k2"));
+
+//(4) values(): returns a MapIterator object of all the values
+console.log(myMap.values());
+
+//(5) keys(): returns a Map iterator object of all the keys
+console.log(myMap.keys());
+
+//(6) entries(): returns a Map iterator object of all the keys and values
+console.log(myMap.entries());
+
+console.log(myMap.forEach(whatever=>{console.log(whatever)}));
+for(let whatever of myMap)console.log(whatever);
+
+//(7) delete(key)
+myMap.delete(document.body);	console.log(myMap);
+
+//(8) clear(): this deletes every key and values of the Map
+myMap.clear();	console.log(myMap);//empty object
+console.log(typeof(myMap));
+
+
+</script>
+</body>
+</html>

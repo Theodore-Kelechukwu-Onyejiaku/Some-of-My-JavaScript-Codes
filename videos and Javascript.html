@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Videos and Javascript</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>	
+	<div style="margin:auto;width:300px">
+			<video id="vid" width="100%" heigth="100%">
+				<source src="Most Foolish Son.mp4" type="video/mp4">
+			</video>
+			<!--  <button id="player">Play</button>  -->
+			<div class="form-group">
+				<button class="btn btn-danger form-control" onclick="playNow()">Play</button>
+			</div>
+			<div class="form-group">
+				<button class="btn btn-danger form-control " onclick="pauseNow()">Pause</button>
+			<div>
+			<div class="form-group">
+				<label for="rg" id="value">Volume </label>
+				<input class="form-control" type="range" id="rg" onchange="changeVolume()">
+			</div>
+	</div>
+<script>
+	var video, play, pause, mute;
+	video = document.getElementById("vid");
+	document.getElementById("player").addEventHandler("click", function(){
+		video.play();
+	});
+
+	function playNow(){
+		var vid = document.getElementById("vid");
+		vid.play();
+	}
+	function pauseNow(){
+		var vid = document.getElementById("vid");
+		vid.pause();
+	}
+	function changeVolume(){
+	var vid = document.getElementById("rg").value;
+		video.volume = vid;
+		document.getElementById("value").innerHTML = "Volume "+vid;
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Child Element Count</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<style type="text/css">
+		.btnContainer{
+			display:flex;
+			flex-direction: row;
+			flex-wrap:nowrap;
+			justify-content: center;
+			justify-content: space-around;
+		}
+		.btnContainer button{
+			flex-basis:100px;
+		}
+		.mySection{
+			border:1px solid black;
+			padding:10px;
+			border-radius: 10px;
+		}
+		.articleContainer{
+			width: 60%;
+			height: 100%;
+			margin: 20px auto;
+		}
+		.mySpan{
+			float:right;
+			margin-top:5px;
+		}
+		.text-white{
+			color:white;
+		}
+		.blueBackground{
+			background-color: rgb(0,0,222);
+		}
+		.greenBackground{
+			background-color:rgb(0,111,0);
+		}
+		.redBackground{
+			background-color: rgb(222,0,0);
+		}
+		.brownBackground{
+			background-color: brown;
+		}
+		article{
+			border:1px solid white;
+			padding:5px;
+		}
+		@media screen and (max-width: 300px){
+			.container{
+				width:100%;
+			}
+			.btnContainer{
+				display:grid;
+				grid-template-columns:1fr;
+				grid-gap:5px;
+			}
+			.articleContainer{
+				width:80%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h2 class="text-center text-danger">childElementCount</h2> 
+		</div>
+		<div class="btnContainer">
+			<button class="btn btn-danger" id="red">red</button>
+			<button class="btn btn-success" id="green">green</button> 
+			<button class="btn btn-warning" id="brown">brown</button>
+			<button class="btn btn-primary" id="blue">blue</button>
+		</div>
+		<div class="articleContainer">
+			<section class="mySection">
+				<article>
+					<h3>Blog Post</h3>
+					<p>
+						Suddenly, he started chanting incantations. I initially thought it was funny, until he started asking me why I haven't 	slept off yet.I told him I would sleep when the time comes, although secretly, I was praying.
+					</p>
+				</article>
+			</section> 
+	 		<span class="mySpan">
+				<button class="btn btn-info" id="add">add</button>
+				<button class="btn btn-danger" id="remove">remove</button>
+			</span>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var redBackground = document.querySelector('#red');
+		var blueBackground = document.querySelector("#blue");
+		var brownBackground = document.querySelector("#brown");
+		var greenBackground = document.querySelector("#green");
+
+//Changing Background colors
+		blueBackground.addEventListener("click", ()=>{
+			mySection.classList.remove("greenBackground", "redBackground", "brownBackground");
+			mySection.classList.add("blueBackground", "text-white");
+		});
+		redBackground.addEventListener("click", ()=>{
+			mySection.classList.remove("greenBackground", "brownBackground", "blueBackground");
+			mySection.classList.add("redBackground", "text-white");
+		})
+		greenBackground.addEventListener("click", ()=>{
+			mySection.classList.remove("brownBackground", "redBackground", "blueBackground");
+			mySection.classList.add("greenBackground", "text-white");
+		})
+		brownBackground.addEventListener("click", ()=>{
+			mySection.classList.remove("greenBackground", "blueBackground", "redBackground");
+			mySection.classList.add("brownBackground", "text-white");
+		})
+
+//Adding and Removing article element
+		var myArticle = document.querySelector("article");
+		var mySection = document.querySelector(".mySection");
+		var newArticleButton = document.getElementById("add");
+		var removeArticleButton = document.getElementById("remove");
+
+		function addArticle(){
+			let newArticle = document.createElement("article")
+			let newHeader = document.createElement("h3");
+			let newParagraph = document.createElement("p");
+				newParagraph.textContent = "Suddenly, he started chanting incantations. I initially thought it was funny, until he started asking me why I haven't 	slept off yet.I told him I would sleep when the time comes, although secretly, I was praying.";
+				newHeader.textContent= "New Blog Post";
+				newArticle.appendChild(newHeader);
+				newArticle.appendChild(newParagraph);
+				mySection.appendChild(newArticle);
+		}
+
+	    function removeArticle(){
+	    	let sectionChildNumbers = mySection.childElementCount;
+	    	if(sectionChildNumbers > 1){
+	    		mySection.removeChild(mySection.children[sectionChildNumbers - 1]);
+	    	}
+	    }
+
+		newArticleButton.addEventListener("click", () =>{
+			addArticle();
+		})
+
+		removeArticleButton.addEventListener("click", ()=>{
+			removeArticle();
+		})
+
+/*
+**NOTE: the childElementCount property is the number of child elements contained by a parent element
+**		and element.children property is an array containing the child elements of an array
+*/
+	</script>
+</body>
+</html>

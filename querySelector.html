@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>document.querySelector()</title>
+	<meta charset="utf-8">
+	<meta lang="en">
+</head>
+<body>
+	<ul>
+		<li>Oracle</li>
+		<li>MySQL</li>
+		<li>MariaDB</li>
+		<li>SQL Server</li>
+	</ul>
+	<script type="text/javascript">
+		let firstListSelector = document.querySelector("li");
+
+		firstListSelector.textContent = "PostgreSQL";
+
+//Note that the document.querySelector() selects the first matching element of the defined selector
+	</script>
+</body>
+</html>

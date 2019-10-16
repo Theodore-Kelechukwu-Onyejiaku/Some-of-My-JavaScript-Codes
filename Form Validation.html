@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validation</title>
+</head>
+<body>
+	<form method="post" onsubmit="return validate()" autocomplete>
+		Password:<input type="password" placeholder="input password" id="input1" autofocus><br>
+		Repeat Password:<input type="password" placeholder="input password" id="input2"><br>
+		<button type="submit">Submit</button>
+
+	</form>
+<script type="text/javascript">
+	function validate(){
+		n1 = document.getElementById("input1").value;
+		n2 = document.getElementById("input2").value;
+		if(n1 !== "" && n2 !== ""){
+			if(n1 === n2){
+				return true;
+			}
+		}
+		alert("Please Enter Matching Passwords Or\n Passwprd should not be blank");
+			return false;
+	}
+</script>
+</body>
+</html>

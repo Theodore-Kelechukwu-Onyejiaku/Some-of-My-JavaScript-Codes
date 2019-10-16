@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.css">
+	<title>JavaScript Numbers</title>
+</head>
+<body>
+<div class="container">
+   <div class="page-header">
+     <h1 style="font-family:cursive">Here we try out the hexadecimal, octal and the binary using the toString() method</h1>
+   </div>
+</div>
+<div class="container jumbotron">
+<p id="one"></p>
+<button onclick="myFunction()"> See</button>
+</div>
+<script type="text/javascript">
+	function myFunction(){
+		var a = 100;
+		var b = a.toString(16);
+		var c = a.toString(8);
+		var d = a.toString(2);
+
+		document.getElementById("one").innerHTML="100 in hexadecimal is "+b+"<br>in octal is "+c+" <br>in Binary is "+d;
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Validate User Input</title>
+	<meta charset="utf-8">
+	<meta lang="en">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link type="images/ico" href="favicon.ico" rel="icon">
+	<style type="text/css">
+		span.tick{
+			color:green;
+			display:none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		<form role="form">
+			<div class="form-group">
+				<label  for="password">Password</label>
+				<input type="password" class="form-control" name="password" id="password" placeholder="password">
+				<p class="text-danger">Password must be between 6-12 characters <span class="tick">&#x2714;</span></p>
+			</div>
+			<button type="submit" class="btn btn-danger" id="sub" disabled="true">Submit</button>
+		</form>
+	</div>
+	<script type="text/javascript">
+		let submitButton = document.getElementById("sub");
+		let condition = document.querySelector("p.text-danger");
+		let tick = document.querySelector("span.tick");
+
+		document.getElementById("password").addEventListener("input", $event =>{
+			if($event.target.value.length >= 6 && $event.target.value.length <= 12){
+				submitButton.removeAttribute("disabled");
+				condition.classList.remove("text-danger");
+				condition.classList.add("text-success");
+				tick.style.display = "inline";
+			}
+			else{
+				submitButton.setAttribute("disabled", "true");
+				condition.classList.remove("text-success");
+				condition.classList.add("text-danger");
+				tick.style.display = "none";
+			}
+
+		})
+	</script>
+</body>
+</html>

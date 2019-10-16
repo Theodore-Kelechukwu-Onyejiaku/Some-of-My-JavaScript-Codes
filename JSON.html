@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON - JavaScript Object Notation</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h3 class="text-danger text-center">This is about JSON - JavaScript Object Notation</h3>
+		</div>
+		<blockquote>Please check the console.</blockquote>
+	</div>
+	<script type="text/javascript">
+		//JSON is a way of sending data and receiving data from a server in object form. This is done using JSON.stringify() - to pass to server and JSON.parse() - to convert string after receiving from server
+
+
+		//FOR OBJECTS
+		/*(1) Passing to server */
+		let employee1 = {
+			name : "Ukosa Grace",
+			gender : "Female",
+			dept : "IMT"
+		}
+		console.log(JSON.stringify(employee1)); //This would pass it to a server as : {"name":"Ukosa Grace","gender":"Female","dept":"IMT"}. With this method, we have turned this to JSON
+
+		//FOR ARRAYS
+		let employee2 = [
+			{name : "Tewase Ann"},
+			{gender : "Female"},
+			{dept : "IMT"}
+		]
+		console.log(JSON.stringify(employee2)); //The JSON format would be: [{"name":"Tewase Ann"},{"gender":"Female"},{"dept":"IMT"}]
+
+
+
+		/*(2) Collecting the data you have to convert it to the normal object format */
+		let employee3 = `[
+			{"age" : 23},
+			{"tel" : 234},
+			{"s_n" : 23 }
+		]`;
+		console.log(JSON.parse(employee3)); //The above array specifies how server returns the JSON. And to render it to our normal object form would be to use JSON.parse
+		
+
+//WOW the "backtick : `" is found under the Esc key		
+	</script>
+</body>
+</html>

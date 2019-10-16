@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Animations</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#con{
+			position: relative;
+			width: 300px;
+			height:300px;
+			background-color:blue;
+		}
+		#box{
+			position:absolute;
+			width: 20px;
+			height:20px;
+			background-color:red;
+		}
+	</style>
+</head>
+<body>
+	<div id="con">
+		<div id="box"></div>
+	</div>
+<script type="text/javascript">
+	var box = document.getElementById("box");
+	var con = document.getElementById("con");
+
+	//This will call the timer every ten milliseconds
+	var t = setInterval(move, 10);	
+	//Our initial position
+	var pos = 0;
+	function move(){
+	//When the left attribute of the box reaches the value of 280, then the move function will stop executing
+				if(pos == 280){
+				clearInterval(move);
+			}else{
+				pos = pos+1;
+				box.style.left = pos+"px";
+			}
+		}
+
+</script>
+</body>
+</html>

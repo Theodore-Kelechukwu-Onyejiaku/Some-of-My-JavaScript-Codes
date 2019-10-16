@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Window Object</title>
+	<meta charset="UFT-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body style="height: 5000px; width:5000px">
+	<div class="containter">
+		<div class="page-header">
+			<h2 class="text-center text-danger">This is about the Window Object</h2>
+		</div>
+		<blockquote>Please Check The Console.</blockquote>
+	</div>
+
+	<script type="text/javascript">
+/************ THE WINDOW OBJECT PROPERTIES	**********/	
+	//(1) window.document: refers to the html element you have created	
+	console.log(window.document);	
+
+	//(2) window.location: this to me shows you the location or directory of this html document.
+	console.log(window.location);
+
+	//(3) window.innerHeight: this is the window height size of the browser
+	console.log(window.innerHeight);
+
+	//(4) window.innerWidth: this is the window width size of the browser
+	console.log(window.innerWidth);
+
+	//(5) window.pageXOffset: this shows the position of the horizontal scroll bar
+	console.log(window.pageXOffset);
+
+	//(6) window.pageYOffset: this shows the position of the vertical scroll bar
+	console.log(window.pageYOffset);
+
+/************ THE WINDOW OBJECT METHODS	**********/	
+	window.alert();
+	window.confirm();
+	//window.back("whatever");	//OUTPUT: window.back is not a function
+	</script>
+</body>
+</html>

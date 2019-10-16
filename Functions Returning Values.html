@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NEW GAME AND CONTINUE GAME</title>
+</head>
+<body>
+	<script>
+	"use strict";
+/*ACTUALLY THIS IS A PROGRAM THAT TOOK ME TIME TO THINK. 
+**IT IS SIMPLY HOW TO CREATE A GAME THAT WILL HAVE THE NEW GAME 
+**AND THIS WAS POSSIBLE THROUGH THE POWER OF CLOSURES
+*/
+		function newGame(){	
+		//THIS IS THE GAME FUNCTION
+			var name =	prompt("Please enter your name");
+				alert("Welcome "+name);
+				function gamePlaying(){
+					alert("GAME IS PLAYING!!!\n GAME IS PLAYING!!!")
+				}
+				gamePlaying();
+		//THIS IS THE END OF THE GAME
+
+		//NOW THIS WILL ASK THE PLAYER IF HE OR SHE WANTS A NEW GAME OF TO CONTINUE 
+			function ask(){
+				var qst = confirm("New Game?, click ok,\nContinue?, click cancel")
+				if(qst === true){
+					return newGame()	//IF YES, REPEAT THE GAME ABOVE
+				}else{
+					return function   contGame() {	//ELSE CONTINUE
+						alert("Welcome back "+name);
+						gamePlaying();
+						ask();
+						}
+				}
+			}
+			ask();
+	}
+	
+		var initGame = newGame();
+		initGame();	//THIS WILL EITHER WORK OR NOT WORK, DEPENDING ON WHAT WILL BE RETURNED. IF newGame() RETURNS TRUE THEN IT WILL ONLY REPEAT THE GAME FUNCTION AGAIN. IF FALSE, THEN THE RETURN FUNCTION WILL BE TO CONTINUE.
+		//HERE IS THE MAGIC. ONCE IT IS CONTINUE, i.e contGame FUNCTION, THEN WITH THE POWER OF CLOSURE, THE NAME OF THE PLAYER WILL STILL BE AVAILABLE.
+	</script>
+</body>
+</html>
+<!-- WOW!!! IT'S WORKING EUREKA!!!
+--   THANKS TO THE POWER OF CLOSURES
+-->
