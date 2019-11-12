@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Vs Javascript: Names, Ages and Remove</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<script type="text/javascript" src="jquery/jquery.js"></script>
+	<style>
+		a{
+			text-decoration:none;
+		}
+		#removeButtons li:hover{
+			background-color: darkred;
+			color:white;
+		}
+		#removeButtons li:hover a{
+			color:white;
+			text-decoration: none;
+		}
+	@media all and (max-width: 790px){ /*Less Than 790px */
+		*{
+			
+		}
+	}
+	</style>
+</head>
+<body>
+<div  class="container">
+		<div class="page-header">
+			<h3 class="text-info text-center">Friend List</h3>
+		</div>
+	<div class="row" id="row">
+		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" id="col-1">
+		<form>
+			<div class="form-group">
+				<input type="text" name="" class="form-control" placeholder="name" id="name" required>
+			</div>
+			<div class="form-group">
+				<label for="age" class="text-info">
+					age
+				</label>
+				<input type="number" name="" placeholder="Eg. 30" min="i0" max="100" id="age" required>
+			</div>
+			<button class="btn btn-info" type="button" id="add">add</button>
+		</form>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" id="col-2">
+			<ul class="list-group text-info" id="nameList">
+				<li class="list-group-item"><h4 class="list-group-item-heading">NAMES</h4></li>
+			</ul>
+		</div>
+		<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" id="col-3">
+			<ul class="list-group text-info" id="ageList">
+				<li class="list-group-item"><h4 class="list-group-item-heading">AGES</h4></li>				
+			</ul>
+		</div>
+		<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" id="col-4">
+			<ul class="list-group text" id="removeButtons">
+				<li class="list-group-item"><h4 class="list-group-item-heading">RM</h4></li>				
+			</ul>
+		</div>
+	</div>
+	<p id="para"></p>
+</div>
+	<script>
+		//DOM DOM DOM
+		const name = document.getElementById("name");
+		const age = document.getElementById("age");
+		const addButton = document.getElementById("add");
+		const nameList = document.getElementById("nameList");
+		const ageList = document.getElementById("ageList");
+		var removeButtons = document.getElementById("removeButtons");
+		
+		//ADDING id to distinguish elements
+		var myid = 0;
+
+		//ADD BUTTON 
+		addButton.addEventListener("click", () =>{
+			myid++;
+			if(name.value && age.value){
+				localStorage.setItem("name", name.value);
+				localStorage.setItem("age", age.value)
+				let myObject = {
+					name : localStorage.getItem("name"),
+					age : localStorage.getItem("age")
+				}
+				//NEW NAME LIST AND AGES
+				var newName = $('<li class="list-group-item" id="name'+myid+'">'+myObject.name+'</li>'); 
+				var newAge = $('<li class="list-group-item" id="name'+myid+'">'+myObject.age+' yrs</li>')
+				$("#nameList").append(newName);
+				$("#ageList").append(newAge);			
+
+				//NEW REMOVE BUTTON
+				var newList= $('<li class="list-group-item" id="rm"+myid><a href="#" class="text-danger">&#x2613; Remove</a></li>');
+				$("#removeButtons").append(newList);
+				newList.on("click", function(){
+					$(this).remove();
+					newAge.remove();
+					newName.remove();
+				})
+			}else{
+				alert("error!!!\nPlease enter info");
+			}
+		});
+
+	/*function changeDOM(){
+		//DOM 
+		var firstCol = $("#col-1");
+		var secondCol  = $("#col-2");
+		var thirdCol = $("#col-3");
+		var fourthCol  = $("#col-4");
+
+		if(window.innerWidth <= 690){
+		console.log("less than 690");
+		firstCol.removeAttr("class");
+		firstCol.removeAttr("id");
+		secondCol.removeAttr("class");
+		secondCol.removeAttr("id");
+		thirdCol.removeAttr("class");
+		thirdCol.removeAttr("id");
+		fourthCol.removeAttr("class");
+		fourthCol.removeAttr("id");
+		}else{
+			firstCol.attr("class", "col-xs-4 col-sm-4 col-md-4 col-lg-4");
+			firstCol.attr("id","col-1");
+			secondCol.attr( "class", "col-xs-4 col-sm-4 col-md-4 col-lg-4");
+			secondCol.attr("id", "col-2");
+			thirdCol.attr("class", "col-xs-2 col-sm-2 col-md-2 col-lg-2");
+			thirdCol.attr("id", "col-3");
+			fourthCol.attr("class", "col-xs-2 col-sm-2 col-md-2 col-lg-2");
+			fourthCol.attr("id", "col-4");
+		}
+	}*/
+
+	</script>
+</body>
+</html>

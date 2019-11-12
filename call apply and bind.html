@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Call, Apply and Bind</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<h4>Call, Apply and bind</h4>
+	<blockquote>Please check console</blockquote>
+
+	<script type="text/javascript">
+		var calculator = {
+			minus : () =>{
+				return "Minus minus minus";
+			},
+			PI : 3.413,
+			sum : (num1, num2, num3) =>{
+				return num2 + num2 + num3;
+			}
+		}
+		var ammeter = {
+			plus: () => {
+				console.log("Plus plus plus")
+			}
+		};
+//CALL IS JUST LIKE METHOD BORROWING BUT THE METHOD DOES NOT STICK WITH THE OBJECT THAT BORROWS THE FUNCTION
+	/*	
+		ammeter.minus = calculator.minus;
+		ammeter.minus(); // Minus minus minus
+	*/	
+		calculator.minus.call(ammeter);
+		
+//BIND STORES THE RETURNED RESULT
+		var name = calculator.minus.bind(ammeter);
+		console.log(typeof name);
+
+//APPLY IS THE SAME AS CALL, BUT IT ACCEPTS AN ARRAY AS ARGUMENT
+		let sum = {
+
+		}
+		var total = calculator.sum.apply(name, [1,2,3]);
+		console.log(total);
+
+
+	</script>
+</body>
+</html>

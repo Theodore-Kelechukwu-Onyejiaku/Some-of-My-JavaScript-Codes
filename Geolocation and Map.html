@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Geolocation and Map</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<h3 class="text-danger text-center text-uppercase">Geolocation and Map</h3>
+	<blockquote>Please check the console</blockquote>
+
+	<!--	POSITION RESULT		-->
+	<div id="positionResult" class="text-center">
+		
+	</div>
+	<!--	MAP RESULT		-->
+	<div id="mapResult">
+		
+	</div>
+
+	<script type="text/javascript">
+		//DOM
+		const positionResult = document.getElementById("positionResult");
+		const mapImage = document.getElementById("mapImage");
+		const mapResult =document.getElementById("mapResult")
+
+		positionResult.textContent = "Longitude and Latitude"
+
+
+/* STAGE 1 **************************************************************************************
+		/*const getLocation = ()=>{
+			if(navigator.geolocation){//This checks if the browser supports geolocation
+				navigator.geolocation.getCurrentPosition(showPosition);	//The "showPostion" function takes in what is returned here
+			}else{
+				positionResult.textContent = "Geolocation is not supported"; //Here if the geolocation is not supported
+			}
+		}
+
+		const showPosition = (position) =>{//This function displays the latitude and the longitude
+			positionResult.innerHTML = position.coords.latitude + "<br>"+ position.coords.longitude;
+		}
+		getLocation();
+		*****************************************************************************************
+				HERE NO ERRORS ARE HANDLED!!!
+*/
+
+/* STAGE 2 ERROR HANDLING *******************************************************************/
+		const getLocation = ()=>{
+			if(navigator.geolocation){//This checks if the browser supports geolocation
+				navigator.geolocation.getCurrentPosition(showPosition, showError);	//The "showPostion" function takes in what is returned here
+			}else{
+				positionResult.textContent = "Geolocation is not supported"; //Here if the geolocation is not supported
+			}
+		}
+
+		//LOCATION FINDER
+		const showPosition = (position) =>{//This function displays the latitude and the longitude
+			
+			positionResult.innerHTML = position.coords.latitude + "<br>"+ position.coords.longitude;
+			
+
+			var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+			var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&sensor=false";
+			mapResult.innerHTML = "<img src='"+img_url+"'>";   					 
+
+		}
+	
+		//ERROR REPORT
+		const showError = (error) =>{
+			switch(error.code){
+				case error.PERMISSION_DENIED:
+											positionResult.innerHTML = "User denied the request for Geolocation"
+											break;
+				case error.POSITION_UNAVAILABLE:
+											positionResult.innerHTML = "Location information is unavailable"
+											break;
+				case error.TIMEOUT: 
+											positionResult.innerHTML = "Request to get user location timed out"
+											break;
+				case error.UNKNOWN_ERROR: 
+											positionResult.innerHTML = "An unknown error occured"
+											break
+			}
+		}
+		getLocation();	
+
+	</script>
+</body>
+</html>

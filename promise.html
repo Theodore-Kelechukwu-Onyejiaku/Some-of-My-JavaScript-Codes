@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Promising</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<blockquote>Please see console</blockquote>
+	<p id="para"></p>
+	<button class="btn btn-primary" onclick="check()">Send</button><hr>
+	<button class="btn btn-primary" onclick="fetchApi()">Fetch Api</button>
+	<hr>
+	<button class="btn btn-primary" onclick="fetchMany()">Fetch Many</button>
+	<script type="text/javascript">
+
+		const myParagraph = document.getElementById("para");
+
+		//This is a promise and this is a function on its ownl. It takes two parameters. Then you can do anything you want to do and then resolve or return.
+		const  promise = new Promise(function(resolve,reject){
+			//Note that the setTimeout takes a function and the Time 
+			setTimeout(() => resolve("Promise returned"), 1000);
+			setTimeout(() =>reject("Promise not returned"), 500);
+			})
+		
+
+		//The then method will take a single function that will take a single argument which is the returned data. There is also the .catch method which is the brother, and this catches any error returned
+		function check(){
+			promise.then((data) =>{
+				console.log(data);
+			})
+			.catch((error) =>{
+				console.log(error);
+			})
+		}
+
+		//HERE WE WANT TO FETCH AN API
+		function fetchApi(){
+			fetch("https://www.dictionaryapi.com/api/v3/references/collegiate/json/quagmire?key=1b068bf5-3d43-4b6c-b2e8-ff7bc9263d33")
+				.then((data)=>{
+					//note that the data returned is not a JSON data. So we need to use the json method to JSONise it
+					data.json().
+					then((jsonReturned) =>{
+						console.log(jsonReturned)
+
+					})
+				})
+				.catch((error) =>{
+					console.log(error);
+				}) 
+		}
+		
+//Note there is also a promise method that takes all promises that are to be settled
+//It is called -------
+		const promise1 = new Promise((resolve, reject) =>{
+			setTimeout(() =>{ resolve("Promise 1 returned")}, 1000)
+		})
+		const promise2 = new Promise((resolve, reject) =>{
+			setTimeout(() =>{ reject("Promise 2 not returned")}, 2000)
+		})
+		const promise3 = new Promise((resolve, reject) =>{
+			setTimeout(() =>{ resolve("Promise 3 returned")}, 3000)
+		})
+			 
+
+		function fetchMany() {
+			Promise.all([promise1, promise2, promise3])
+				.then((data) =>{console.log(data);
+								myParagraph.textContent = data;
+								})
+				.catch((error) =>{console.log(error)
+								myParagraph.textContent = error;
+								}) 
+			}
+	</script>
+</body>
+</html>

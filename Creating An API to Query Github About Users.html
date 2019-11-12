@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Query github api about users</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<style type="text/css">
+		.jumbotron{
+			border-top:5px solid blue;
+			border-bottom: 5px solid blue;
+		}
+		.page-header{
+			padding:3%;
+			margin:5%;
+		}
+		#warning{
+			display:none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="page-header bg-primary">
+			<h4 class="text-center" style="color:white">Using GIT HUB API to query user's information</h4>
+			<hr>
+		</div>
+		<div class="row">
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<form role="form">
+					<div class="form-group">
+							<input class="form-control" type="text" name="user" placeholder="enter any name of user you know eg. Google" id="inputValue" autofocus>
+							<span id="warning" class="text-danger">Please enter a value</span>
+					</div>
+					<center>
+							<button type="button" class="btn btn-primary" >find</button>
+					</center>
+				</form>
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>	
+		</div>
+		<hr>
+		<div class="jumbotron text-primary">
+			
+		</div>
+	</div>
+	<script type="text/javascript">
+		//DOM ELEMENTS
+		const submitButton = document.querySelector(".btn");
+		const input = document.getElementById("inputValue");
+		const warning = document.getElementById("warning");
+		const jumbo = document.querySelector("jumbotron");
+
+		//XHTML object
+		const request = new XMLHttpRequest();
+		
+		//SUBMISSION
+		submitButton.addEventListener("click", () => {
+			if(!input.value){
+				warning.style.display = "block";
+				submitButton.setAttribute("disabled", "true");
+			}
+			else{
+				submitButton.setAttribute("disabled", "false");
+
+				//Create our request
+				request.onreadystatechange = function(){
+					const name = input.value;
+					request.open("GET", "api.github.com/users/"+name);
+
+				//Now send the request
+				request.send();
+				}
+			}
+		})
+
+		//NOW LET'S HANDLE THE REQUEST
+		request.onreadystatechange = () =>{
+			if(request.readyState === 4){
+				if(request.status === 404){
+					return jumbo.textContent = "User not found\n Please enter correct name"
+				}
+				jumbo.textContent = request.response;
+					console.log("reponse returned");
+			}
+		}
+
+		//VALIDATION FOR INPUT ELEMENT
+		input.addEventListener("focus", ()=>{
+				warning.style.display = "none";
+				submitButton.removeAttribute("disabled");
+			});
+	</script>
+</body>
+</html>

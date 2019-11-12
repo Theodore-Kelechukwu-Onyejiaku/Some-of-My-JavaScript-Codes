@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sliders</title>
+	<style type="text/css">
+		html, body{
+			height: 100%;
+			margin:0;
+			padding: 0;
+		}
+		.container{
+			height: 100%;
+			border:2px solid green;
+			display: flex;
+		}
+		button{
+			height: 20px;
+		}
+		.image-container{
+			height: 100%;
+			width:50%;
+			margin:auto auto;
+			border:2px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<button id="prev">prev</button>
+		<div class="image-container"></div>
+		<button id="next">next</button>
+	</div>
+
+	<script type="text/javascript">
+		const prevButton = document.getElementById("prev");
+		const nextButton = document.getElementById("next");
+
+
+		prevButton.addEventListener("click", (event)=>{
+			 event.preventDefault();
+			console.log("previous")
+		}) 
+		nextButton.addEventListener("click", (event)=>{
+			event.preventDefault();
+			console.log("next")
+		}) 
+	</script>
+</body>
+</html>
